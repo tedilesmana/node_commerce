@@ -44,9 +44,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 // 	res.render('index');
 // });
 
+var page = require('./models/pages.js')
+
 var pages = require('./routes/pages.js');
 
+var admin_pages = require('./routes/admin_pages.js');
+
 app.use('/',pages);
+
+app.use('/admin',admin_pages);
 
 var port = 3000;
 
